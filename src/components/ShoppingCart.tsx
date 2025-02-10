@@ -7,13 +7,13 @@ const ShoppingCart: React.FC = () => {
 
   const totalPrice = useMemo(() => {
     console.log('Calculating total price');
-    return items.reduce((total, item) => total + item.price, 0);
+    return items.reduce((total : any , item: any ) => total + item.price, 0);
   }, [items]);
 
   return (
     <div>
       <h2>Carrinho de Compras</h2>
-      {items.map((item) => (
+      {items.map((item:any) => (
         <CartItem key={item.id} {...item} onRemove={removeItem} />
       ))}
       <h3>Total: R${totalPrice.toFixed(2)}</h3>
